@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-900 font-mono">
+    <div class="flex flex-col md:flex-row p-5 md:p-10 min-h-screen w-full">
+
+        <!-- left section  -->
+        <div class="w-full md:w-1/4  md:border-2 md:border-slate-700 rounded-xl overflow-hidden pt-10 pl-8">
+            <!-- input box  -->
+            <div class="flex items-center justify-around border-2 border-slate-700 w-11/12 rounded-xl overflow-hidden">
+                <img class="w-6 cursor-pointer" src="../Images/search.svg" alt="">
+                <input class="inputField px-2 py-3 bg-transparent outline-none  text-white" type="text"
+                    placeholder="Search for places..">
+                <img class="w-6 cursor-pointer" src="../Images/close.svg" alt="" id="closeBtn">
+            </div>
+
+            <!-- weather image  -->
+            <div class="mt-4 flex items-center text-white cursor-pointer">
+                <img class="w-48" src="" alt="" id="wImg">
+                <h2 class="wStat"></h2>
+            </div>
+            <!-- ended -->
+
+            <!-- temperature start from here  -->
+            <div class="text-white mt-2">
+                <h2 class="text-5xl" id="temp"></h2>
+            </div>
+            <!-- temperature ends here  -->
+
+            <!-- day and time of current temp  -->
+
+            <div class="mt-8 ml-2 text-gray-300 flex items-center gap-5">
+                <h3 class="text-xl" id="dayName"></h3>
+                <h3 class="text-xl" id="crrTime"></h3>
+            </div>
+
+            <!-- current city  -->
+
+            <div class="ml-2 text-gray-300 flex flex-col mt-2 gap-3">
+                <h3 class="text-xl">Current City : <span id="cCity"></span></h3>
+                <h3 class="text-xl">Region : <span id="region"></span></h3>
+                <h3 class="text-xl">Day : <span id="date"></span></h3>
+            </div>
+
+        </div>
+
+        <!-- right section  -->
+        <div class="w-full md:w-3/4 pt-10 pl-8 rounded-xl md:border-2 md:border-slate-700">
+            <!-- line breaker  -->
+            <div class="w-full h-1 border-2 rounded-2xl bg-yellow-500 border-yellow-500 mt-5 mb-5 md:hidden"></div>
+            <!-- line breaker ends  -->
+            <h2 class="text-2xl text-white font-semibold ">Next 3 Days:</h2>
+
+            <!-- card for 3 days data forecasting -->
+            <div class="flex flex-col md:flex-row items-center gap-7 md:gap-10 mt-5">
+
+                <div
+                    class="w-60 h-48 md:h-44 cursor-pointer bg-slate-950 rounded-xl text-white flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mt-2" id="day1_dayName"></h3>
+                    <img class="w-24" src="" alt="" id="day1_img">
+                    <div class="flex gap-5">
+                        <h3 class="text-base" id="day1_temp"></h3>
+                        <h3 class="text-base" id="day1_wind"></h3>
+                    </div>
+                </div>
+                <div
+                    class="w-60 h-48 md:h-44 cursor-pointer bg-slate-950 rounded-xl text-white flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mt-2" id="day2_dayName"></h3>
+                    <img class="w-24" src="" alt="" id="day2_img">
+                    <div class="flex gap-5">
+                        <h3 class="text-base" id="day2_temp"></h3>
+                        <h3 class="text-base" id="day2_wind"></h3>
+                    </div>
+                </div>
+                <div
+                    class="w-60 h-48 md:h-44 cursor-pointer bg-slate-950 rounded-xl text-white flex flex-col items-center">
+                    <h3 class="text-xl font-semibold mt-2" id="day3_dayName"></h3>
+                    <img class="w-24" src="" alt="" id="day3_img">
+                    <div class="flex gap-5">
+                        <h3 class="text-base" id="day3_temp"></h3>
+                        <h3 class="text-base" id="day3_wind"></h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ends  -->
+
+            <!-- line breaker  -->
+            <div class="w-full h-1 border-2 rounded-2xl bg-yellow-500 border-yellow-500 mt-5 mb-5 md:hidden"></div>
+            <!-- todays highlights  -->
+            <div class="mt-7">
+                <h2 class="text-2xl text-white font-semibold ">Today's Highlights:</h2>
+                <!-- cards  -->
+                <div class="mt-4 flex items-center gap-4 md:gap-7 flex-col md:flex-row flex-wrap">
+
+                    <div class="w-52 h-56 bg-gray-800 rounded-xl cursor-pointer text-white ">
+                        <div class="ml-10 flex flex-col  justify-around w-full h-full">
+                            <h4 class="text-lg text-gray-200">Humidity</h4>
+                            <h4 class="text-4xl font-semibold " id="humidity"></h4>
+                            <h5 class="text-lg text-gray-200 ">Normal 🤙</h5>
+                        </div>
+                    </div>
+                    <div class="w-52 h-56 bg-gray-800 rounded-xl cursor-pointer text-white ">
+                        <div class="ml-10 flex flex-col  justify-around w-full h-full">
+                            <h4 class="text-lg text-gray-200">Visibility</h4>
+                            <h4 class="text-4xl font-semibold" id="visibility"></h4>
+                            <h5 class="text-lg text-gray-200">Average 🫡</h5>
+                        </div>
+                    </div>
+                    <div
+                        class="w-52 h-56 bg-gray-800 rounded-xl cursor-pointer text-white flex flex-col  justify-around">
+                        <div class="ml-10 flex flex-col  justify-around w-full h-full">
+                            <div>
+                                <h4 class="text-lg text-gray-200">Air Quality</h4>
+                                <span>(carbon monoxide)</span>
+                            </div>
+                            <h4 class="text-4xl font-semibold" id="airQuality"></h4>
+                            <h5 class="text-lg text-gray-200">Unhealthy 👎</h5>
+                        </div>
+                    </div>
+                    <div
+                        class="w-52 h-56 bg-gray-800 rounded-xl cursor-pointer text-white flex flex-col  justify-around">
+                        <div class="ml-10 flex flex-col  justify-around w-full h-full">
+                            <h4 class="text-lg text-gray-200">Wind Status</h4>
+                            <h4 class="text-3xl font-semibold" id="windStat"></h4>
+                            <h5 class="text-lg text-gray-200">Too High 💨</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end  -->
+        </div>
+
+    </div>
+</body>
+<script src="../JS/index.js"></script>
+
+</html>
